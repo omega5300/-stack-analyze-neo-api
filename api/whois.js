@@ -6,7 +6,10 @@ module.exports = async (req, res) => {
   if(url !== '') {
     try {
       const data = await whois.lookup(url);
-      res.status(200 || 304).json({ domain: data});
+      res.status(200 || 304).json({
+        url,
+        domain: data
+      });
     } catch (err) {
       res.status(400 || 500).json({ msg: err.message });
     }
