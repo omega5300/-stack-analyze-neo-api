@@ -9,7 +9,7 @@ module.exports = (req, res) => {
     return res.status(404).send('Please http:// or https:// is required');
   }
   
-  validateCss({uri: url.value}, (err, data) => {
+  validateCss({uri: url}, (err, data) => {
   	if(err) {
   		res.status(400 || 500).json({ msg: err })
   	} else {
