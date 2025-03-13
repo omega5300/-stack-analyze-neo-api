@@ -6,6 +6,6 @@ module.exports = async (req, res) => {
       await fetch(`https://bicyclecards.com/how-to-play/${game}`)
     ).text();
     
-    res.send(data);
+    if(!game) { res.send(data); }
   } catch(err) { res.send(err.message); }
 };
